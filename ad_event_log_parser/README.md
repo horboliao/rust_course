@@ -1,5 +1,7 @@
 # Ad Event Log Parser
 
+## [Crates](https://crates.io/crates/ad_event_log_parser) & [Docs](https://docs.rs/ad_event_log_parser/0.1.0/ad_event_log_parser/)
+
 ## Project Description
 `ad_event_log_parser` This project parses ad event logs and extracts relevant details such as date, time, UUID, IP address, and price from log entries. The log format is defined as:
 `"date time UUID IP price"`.
