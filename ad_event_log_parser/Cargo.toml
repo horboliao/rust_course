@@ -8,4 +8,9 @@ authors = ["Olha Horban olha.horban@ukma.edu.ua"]
 
 [dependencies]
 nom = "7.0"
+pest = "2.6"
+pest_derive = "2.6"
+thiserror = "2.0.3"
+anyhow = "1.0.93"
+csv = "1.1"
 
