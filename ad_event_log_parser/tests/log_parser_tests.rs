@@ -1,6 +1,33 @@
 use ad_event_log_parser::*;
 use anyhow::Result;
 
+mod whitespace {
+    use super::*;
+    use pest::Parser;
+
+    #[test]
+    fn test_whitespace_parsing() {
+        let spaces = "   ";
+        let tabs = "\t\t";
+        let newlines = "\n\n";
+        let mixed = " \t\n ";
+
+        assert!(AdEventLogParser::parse(Rule::WHITESPACE, spaces).is_ok());
+
+        assert!(AdEventLogParser::parse(Rule::WHITESPACE, tabs).is_ok());
+
+        assert!(AdEventLogParser::parse(Rule::WHITESPACE, newlines).is_ok());
+
+        assert!(AdEventLogParser::parse(Rule::WHITESPACE, mixed).is_ok());
+    }
+
+    #[test]
+    fn invalid_whitespace() {
+        let parse_result = AdEventLogParser::parse(Rule::WHITESPACE, "abc");
+        assert!(parse_result.is_err());
+    }
+}
+
 mod date {
     use super::*;
     use pest::Parser;
